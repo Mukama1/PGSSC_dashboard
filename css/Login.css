@@ -1,0 +1,103 @@
+body {
+  margin: 80px 0;
+  color: #0000FF;
+  background-image: none;
+  background-color: #E6E6FA;
+}
+#login-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: #000080;
+}
+#login-container .row > div {
+  margin-bottom: 1em;
+  color: #0000FF;
+}
+#login-container .row > div:last-child {
+  margin-bottom: 0;
+  color: #000080;
+}
+#login-container #logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  color: #0000FF;
+  background-color: #e5412d;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+#login-container #logo:hover {
+  background-color: #dd301b;
+  color: #000080;
+}
+#login-container #signup-btn {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #0000FF;
+  background-color: #222222;
+  border-color: #1d1d1d;
+}
+#login-container #signup-btn:hover {
+  background-color: #1d1d1d;
+  border-color: #181818;
+  color: #000080;
+}
+#login {
+  position: relative;
+  color: #000080;
+  padding: 65px 25px 50px 25px;
+  margin-bottom: 1em;
+  background-color: #FFF;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.65);
+}
+#login #login-form {
+  padding: 0;
+  color: #000080;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: left;
+}
+#login #login-form label {
+  display: none;
+  color: #0000FF;
+}
+#login #login-form .form-control {
+  height: 40px;
+  color: #000080;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#login #login-btn {
+  padding-top: 10px;
+  color: #000080;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  #login-container {
+    width: 450px;
+	color: #000080;
+  }
+  #login-container .row > div {
+    margin-bottom: 0;
+	color: #000080;
+  }
+  #login #login-form {
+    padding: 0 25px;
+	color: #000080;
+    text-align: left;
+  }
+}
