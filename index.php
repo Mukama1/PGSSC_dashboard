@@ -121,31 +121,7 @@ switch ($page) {
             include 'pages/' . $page . '.php';
         break;
 		
-    case 'demographics':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'cug':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'vht_follow':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'midwife_follow':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'address_cost':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
+       
     case 'logout':
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
@@ -156,59 +132,27 @@ switch ($page) {
             include 'pages/' . $page . '.php';
         break;
         
-    case 'list_products':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
         
     case 'list_users':
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
+    
+	case 'usersedit':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
         
+	case 'editusersdatasurveyors':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+    
+	
     case 'set_featured':
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
-        
-    case 'terms_of_service':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'list_orders_n':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'order_summary':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'completed_orders':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'blog':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'list_blog':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'delete_blog':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
-        
-    case 'edit_blog':
-        if (file_exists('pages/' . $page . '.php'))
-            include 'pages/' . $page . '.php';
-        break;
+
 }
 ?>

@@ -16,7 +16,10 @@
 <body bgcolor="#B0E0E6">
       <div id="wrapper">
 
-            <?php include 'includes/headeronesurveyor.php'; ?>
+            <?php include 'includes/headeronesurveyor.php';
+ 
+
+			?>
 
 
             <div id="sidebar-wrapper" class="collapse sidebar-collapse">
@@ -128,7 +131,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Has Been Updated Successfully</font></strong></h5>";
 											
-                                          //  header("refresh:1;url=index.php?page=viewhospitalscordinator");
+                                            header("refresh:1;url=index.php?page=viewhospitalscordinator");
                                         }
                                     } else {
                                         //output errors
@@ -139,8 +142,10 @@
                                 }
 								$hospital_id=Input::get('id');
 							
-   
-                                          $edithospital= DB::getInstance()->query("SELECT hname,haddress,hdirectorname,hdirectorqualif,hdirectorphone,level,type,staffname,staffqualif FROM hospitals INNER JOIN pgssc_users ON hospitals.User_Name= pgssc_users.User_Name");
+   // echo $_SESSION['pgsscadmin_h_id']."pppppppppppppppp".$_SESSION['pgsscadmin_user_id'];
+   // $hospital_id=DB::getInstance()->getName("pgssc_users",$_SESSION['pgsscadmin_user_id'],"User_Name","Üser_id");
+   // echo $hospital_id;
+                                          $edithospital= DB::getInstance()->query("SELECT hname,haddress,hdirectorname,hdirectorqualif,hdirectorphone,level,type,staffname,staffqualif FROM hospitals where hospital_id=".$_SESSION['pgsscadmin_h_id']);
                                                 foreach ($edithospital->results() as $edithospital) {
                                                     $hospital_name=$edithospital->hname;
                                                     $hospital_address=$edithospital->haddress;

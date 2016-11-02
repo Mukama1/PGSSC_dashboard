@@ -133,6 +133,7 @@ class DB {
     
     // populating drop downs
     public function dropDowns($tableName,$id,$name){
+		$this->_options="";
         $this->_dropQuery= $this->query("SELECT * FROM $tableName ORDER BY $name ASC");
         $this->_options.="<option value=''>----SELECT----</option>";
         if($this->_dropQuery->count()){
@@ -145,6 +146,7 @@ class DB {
     //get field name
     public function getName($table,$id,$return,$idColumn)
     {
+		$this->_columnName="";
         $this->_query= $this->query("SELECT $idColumn,$return FROM $table where $idColumn='$id'");
         if($this->_query->count()){
             foreach ($this->_query->results() as $result){

@@ -52,60 +52,66 @@
 
                         <div class="portlet-content">
 
-    <form method="get" action="#">
+    <form method="post" action="#">
+	
+	<?php
+                                if (Input::exists()) {
+                                    // 
+                                    $validate = new Validate();
+                                    $validation = $validate->check($_POST, array(
+                                        'hospital_id' => array(
+                                            'required' => TRUE,
+                                            'min' => 1
+                                        ),
+										'user_id' => array(
+                                            'required' => TRUE,
+                                            'min' => 1
+                                        )
+                                    ));
+                                    if ($validation->passed()) {
+                                        //
+                                        $hospital_id = Input::get('hospital_id');
+                                        $user_id = Input::get('user_id');
+                                        $hospitalInsert = DB::getInstance()->insert('assignhospital', array(
+                                            'hospital_id' => $hospital_id,
+                                            'User_id' => $user_id
+                                        ));
+                                        if ($hospitalInsert) {
+                                            echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Has been assigned successfully</font></strong></h5>";
+											
+                                            header("refresh:2;url=index.php?page=pickhospital");
+                                        }
+                                    } else {
+                                        //output errors
+                                        foreach ($validation->errors() as $error) {
+                                            echo "<h5 align='center' ><font color='red'>" . $error . '</font></h5>';
+                                        }
+                                    }
+                                }
+                                ?>
+								<div class="form-group col-sm-6">	
+                                            <label for="select-role">Select Hospital</label>
+                                            <select id="select-input" name="hospital_id" class="form-control">
+                                                <?php
+												 echo DB::getInstance()->dropDowns("hospitals","hospital_id","hname");
+												?>
+                                            </select>
+                                        </div>
+										<div class="form-group col-sm-6">	
+                                            <label for="select-role">Select Data Surveyor</label>
+                                            <select id="select-input" name="user_id" class="form-control">
+                                                <?php
+												 echo DB::getInstance()->dropDowns("pgssc_users","User_id","User_Name");
+												?>
+                                            </select>
+                                        </div>
         
-        <select id="cd" name="cd">
-        
-            <?php
-            
-            $mysqlserver="127.0.0.1";
-            $mysqlusername="root";
-            $mysqlpassword="";
-            $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
-            
-            $dbname = 'pgssc';
-            mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
-            
-            $cdquery="SELECT hname FROM hospitals";
-            $cdresult=mysql_query($cdquery) or die ("Query to get data from hospitals failed: ".mysql_error());
-            
-			while ($cdrow=mysql_fetch_array($cdresult)) {
-            $hname=$cdrow["hname"];
-                echo "<option>$hname</option>";
-            
-            }
-                
-            ?>
-    
-        </select>
+       
   
 
-        <select id="cd" name="cd">
         
-            <?php
-            
-            $mysqlserver="127.0.0.1";
-            $mysqlusername="root";
-            $mysqlpassword="";
-            $link=mysql_connect(localhost, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
-            
-            $dbname = 'pgssc';
-            mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
-            
-            $cdquery="SELECT User_Name FROM pgssc_users";
-            $cdresult=mysql_query($cdquery) or die ("Query to get data from Users failed: ".mysql_error());
-            
-			while ($cdrow=mysql_fetch_array($cdresult)) {
-            $User_Name=$cdrow["User_Name"];
-                echo "<option>$User_Name</option>";
-            
-            }
-                
-            ?>
-    
-        </select>
-
-  
+<br/>
+  <button class="btn btn-success" type="submit">Assign Hospital</button>
     </form>
 	 </div> <!-- /.portlet-content -->
 

@@ -60,6 +60,13 @@ ob_start();
                                 if ($login) {
                                     $_SESSION['pgsscadmin_username']=$username;
                                     $_SESSION['pgsscadmin_role']=DB::getInstance()->getName("pgssc_users",$username,"Role","User_Name");
+									$user_id=$_SESSION['pgsscadmin_user_id']=DB::getInstance()->getName("pgssc_users",$username,"User_id","User_Name");
+									$edithospital= DB::getInstance()->query("select hospital_id from assignhospital where User_id=".$user_id);
+                                                foreach ($edithospital->results() as $edithospital) {
+                                                    $hospital_id=$edithospital->hospital_id;
+                                                }
+									$_SESSION['pgsscadmin_h_id']=$hospital_id;
+									//echo "pppppppppppppppppp".$_SESSION['pgsscadmin_h_id'];
 //                                    echo $_SESSION['pgsscadmin_role'];
 if($_SESSION['pgsscadmin_role']=='Research Coordinator'){
 	 Redirect::to('index.php?page=dashboardcordinator');

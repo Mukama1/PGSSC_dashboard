@@ -76,12 +76,12 @@
                                     <div class="details">
                    <span class="content"><B>Incomplete Hospitals Survey</B></span>
                                         <span class="value"> <?php
-//                                            $counter_cart = 0;
-//                                            $orders_cart = DB::getInstance()->query("SELECT * FROM jerm_cart GROUP BY User_Id");
-//                                            foreach ($orders_cart->results() as $orders_cart) {
-//                                                $counter_cart++;
-//                                            }
-//                                            echo seperators($counter_cart);
+                                            $counter_cart = 1;
+                                            $orders_cart = DB::getInstance()->query("SELECT * FROM assignhospital GROUP BY User_id");
+                                            foreach ($orders_cart->results() as $orders_cart) {
+                                                $counter_cart++;
+                                            }
+                                            echo seperators($counter_cart);
                                             ?></span>
                                     </div> <!-- /.details -->
 
@@ -103,6 +103,15 @@
                                     <div class="details">
                    <span class="content"><B>Pending Hospitals Survey</B></span>
                                         <span class="value">
+										
+										<?php
+                                            $counter_cart = 0;
+                                            $orders_cart = DB::getInstance()->query("SELECT * FROM assignhospital GROUP BY User_id");
+                                            foreach ($orders_cart->results() as $orders_cart) {
+                                                $counter_cart++;
+                                            }
+                                            echo seperators($counter_cart);
+                                            ?>
 											</span>
                                     </div> <!-- /.details -->
 
@@ -122,12 +131,12 @@
                                     <div class="details">
                             <span class="content"><B>Registered Users</B></span>
                                         <span class="value"><?php
-//                                            $counter_users = 0;
-//                                            $_users = DB::getInstance()->query("SELECT * FROM pgssc_users");
-//                                            foreach ($_users->results() as $_users) {
-//                                                $counter_users++;
-//                                            }
-//                                            echo seperators($counter_users);
+                                          $counter_users = 0;
+                                            $_users = DB::getInstance()->query("SELECT * FROM pgssc_users");
+                                            foreach ($_users->results() as $_users) {
+                                                $counter_users++;
+                                            }
+                                            echo seperators($counter_users);
                                             ?></span>
                                     </div> <!-- /.details -->
 

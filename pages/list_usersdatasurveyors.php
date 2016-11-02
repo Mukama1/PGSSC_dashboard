@@ -92,6 +92,7 @@
                                                     <th data-filterable="true" data-sortable="true">Email</th>
                                                     <th data-filterable="true" class="hidden-xs hidden-sm">Phone Number</th>
                                                     <th data-filterable="true" class="hidden-xs hidden-sm">Role</th>
+													<th data-filterable="true" class="hidden-xs hidden-sm">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -109,6 +110,7 @@
                                                         <td><?php echo $users_list->Email;  ?></td>
                                                         <td class="hidden-xs hidden-sm"><?php echo $users_list->Phone;  ?></td>
                                                         <td class="hidden-xs hidden-sm"><?php echo $users_list->Role;  ?></td>
+														<td> <a href="index.php?page=usersedit&id=<?php echo $users_list->User_id;?>">Edit</a>
                                                     </tr>  
                                                     <?php
                                                 }

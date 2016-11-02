@@ -16,7 +16,7 @@
 <body>
         <div id="wrapper">
 
-            <?php include 'includes/headerone.php'; ?>
+            <?php include 'includes/headeronecordinator.php'; ?>
 
 
             <div id="sidebar-wrapper" class="collapse sidebar-collapse">
@@ -24,7 +24,7 @@
 
 
                 <?php
-                include 'includes/navigation.php';
+                include 'includes/navigationcordinator.php';
                 ?>
 
             </div> <!-- /#sidebar-wrapper -->
@@ -34,7 +34,7 @@
             <div id="content">		
 
                 <div id="content-header">
-                    <h1>PGSSC Users</h1>
+                    <h1>PGSSC Data Surveyors</h1>
                 </div> <!-- #content-header -->	
 
 
@@ -45,7 +45,7 @@
 
                             <h3>
                                 <i class="fa fa-group"></i>
-                                Add New User
+                                Edit Data Surveyor User Information
                           </h3>
 
                         </div> <!-- /.portlet-header -->
@@ -57,55 +57,64 @@
                                     // echo Input::get('username');
                                     $validate = new Validate();
                                     $validation = $validate->check($_POST, array(
-                                        'username' => array(
+                                        'User_Name' => array(
                                             'required' => TRUE,
                                             'min' => 2
                                         ),
-                                        'password' => array(
+                                        'Password' => array(
                                             'required' => TRUE
                                         )
                                         ,
-                                        'email' => array(
+                                        'Email' => array(
                                             'required' => TRUE
                                         )
                                         ,
-                                        'firstname' => array(
+                                        'First_Name' => array(
                                             'required' => TRUE
                                         )
                                         ,
-                                        'lastname' => array(
+                                        'Last_Name' => array(
+                                            'required' => TRUE
+                                        )
+										 ,
+                                        'Role' => array(
+                                            'required' => TRUE
+                                        )
+										,
+                                        'Phone' => array(
                                             'required' => TRUE
                                         )
                                     ));
                                     if ($validation->passed()) {
                                         //login user
-                                        $fname = Input::get('firstname');
-                                        $lname = Input::get('lastname');
-                                        $username = Input::get('username');
-                                        $password = Input::get('password');
+                                        $User_id = Input::get('User_id');
+										$First_Name = Input::get('First_Name');
+                                        $Last_Name = Input::get('Last_Name');
+                                        $User_Name = Input::get('User_Name');
+                                        $Password = Input::get('Password');
                                         $cpassword = Input::get('cpassword');
-                                        $email = Input::get('email');
-                                        $role = Input::get('role');
+                                        $Email = Input::get('Email');
+                                        $Role = Input::get('Role');
                                         $Phone = Input::get('Phone');
-                                        $queryDup = "select * from pgssc_users where User_Name='$username'";
-                                        if (DB::getInstance()->checkRows($queryDup)):
-                                            echo "<h5 align='center' ><font color='red'>User Already Registered.</font></h5>";
-                                            header("refresh:1;url=index.php?page=users");
-                                            exit();
-//                                            
-                                        endif;
-                                        $userInsert = DB::getInstance()->insert('pgssc_users', array(
-                                            'User_Name' => $username,
-                                            'Role' => $role,
-                                            'Password' => sha1($password),
-                                            'First_Name' => $fname,
-                                            'Last_Name' => $lname,
-                                            'Email' => $email,
+                                        $queryDup = "select * from pgssc_users where User_Name='$User_Name'";
+                                        // if (DB::getInstance()->checkRows($queryDup)):
+                                            // echo "<h5 align='center' ><font color='red'>User Already Registered.</font></h5>";
+                                            // header("refresh:1;url=index.php?page=users");
+                                            // exit();
+                                           
+                                        // endif;
+										$userInsert = DB::getInstance()->update('pgssc_users', $User_id,array(
+                                            'User_Name' => $User_Name,
+                                            'Role' => $Role,
+                                            'Password' => sha1($Password),
+                                            'First_Name' => $First_Name,
+                                            'Last_Name' => $Last_Name,
+                                            'Email' => $Email,
                                             'Phone' => $Phone
-                                        ));
+                                        ), "User_id");
                                         if ($userInsert) {
-                                            echo "<h5 align='center' ><strong><font color='green' size='2px'>User Created</font></strong></h5>";
-                                            header("refresh:2;url=index.php?page=users");
+                                            echo "<h5 align='center' ><strong><font color='green' size='2px'>User Details Have Been Updated Successfully</font></strong></h5>";
+                                            header("refresh:2;url=index.php?page=list_users");
                                         }
                                     } else {
                                         //output errors
@@ -114,35 +123,53 @@
                                         }
                                     }
                                 }
+								
+								$User_id=Input::get('id');
+							
+   
+                                          $edituser= DB::getInstance()->query("SELECT * FROM pgssc_users where User_id=".$User_id);
+                                                foreach ($edituser->results() as $edituser) {
+                                                    $User_Name=$edituser->User_Name;
+                                                    $Role=$edituser->Role;
+													$Password=$edituser->Password;
+                                                    $First_Name=$edituser->First_Name;
+													$Last_Name=$edituser->Last_Name;
+                                                    $Email=$edituser->Email;
+													$Phone=$edituser->Phone;
+                                                   
+													
+                                                }
+                             
+								
                                 ?>
                                 <div class="row">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-5">
-
+								<input type="hidden" id="User_id-input" value="<?php echo $User_id ?>" name="User_id" class="form-control">
                                         <div class="form-group">
                                             <label for="first-name">First Name</label>
-                                            <input type="text" id="firstname-input" value="<?php echo escape(Input::get('firstname')); ?>" name="firstname" class="form-control">
+                                            <input type="text" id="firstname-input" value="<?php echo $First_Name; ?>" name="First_Name" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="last-name">Last Name</label>
-                                            <input type="text" id="lastname-input" value="<?php echo escape(Input::get('lastname')); ?>" name="lastname" class="form-control">
+                                            <input type="text" id="lastname-input" value="<?php echo $Last_Name; ?>" name="Last_Name" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input type="text" id="email-input" value="<?php echo escape(Input::get('email')); ?>" name="email" class="form-control">
+                                            <input type="text" id="email-input" value="<?php echo $Email; ?>" name="Email" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="username">User Name</label>
-                                            <input type="text" id="username-input" name="username" value="<?php echo escape(Input::get('username')); ?>" class="form-control">
+                                            <input type="text" id="username-input" name="User_Name" value="<?php echo $User_Name; ?>" class="form-control">
                                         </div>
-                                        <button type="submit" class="btn btn-success fa fa-user"> Add User</button>
+                                        <button type="submit" class="btn btn-success fa fa-user"> Edit User</button>
 
                                     </div> <!-- /.col -->
 
                                     <div class="col-sm-5">
                                         <div class="form-group">	
                                             <label for="select-role">Role</label>
-                                            <select id="select-input" name="role" class="form-control">
+                                            <select id="select-input" name="Role" class="form-control">
                                                 <option value="Data Surveyor">Data Surveyor</option>
                                                 <option value="Research Coordinator">Research Coordinator</option>
                                                 <option value="Administrator">Administrator</option>
@@ -150,7 +177,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="password">Password</label>
-                                            <input type="password"  name="password" id="password-input" class="form-control">
+                                            <input type="password"  name="Password" id="password-input" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="confirm-password">Confirm Password</label>
@@ -158,7 +185,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Phone">Phone Number</label>
-                                            <input type="text" name="Phone" value="<?php echo escape(Input::get('Phone')); ?>" id="Phone-input" class="form-control">
+                                            <input type="text" name="Phone" value="<?php echo $Phone; ?>" id="Phone-input" class="form-control">
                                         </div>
 
 

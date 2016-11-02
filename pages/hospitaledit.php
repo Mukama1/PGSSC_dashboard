@@ -127,7 +127,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Has Been Updated Successfully</font></strong></h5>";
 											
-                                          //  header("refresh:1;url=index.php?page=viewhospitalscordinator");
+                                            header("refresh:1;url=index.php?page=viewhospitalscordinator");
                                         }
                                     } else {
                                         //output errors
@@ -161,7 +161,7 @@
 <input type="hidden" id="hospitalname-input" value="<?php echo $hospital_id ?>" name="h_id" class="form-control">
                                         <div class="form-group">
                                             <label for="hospital-name">Hospital Name</label>
-                                            <input type="text" id="hospitalname-input" value="<?php echo $hospital_name ?>" name="hname" class="form-control">
+                                            <input type="text" id="hospitalname-input" value="<?php echo $hospital_name; ?>" name="hname" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="Hospital-address">Hospital Address</label>

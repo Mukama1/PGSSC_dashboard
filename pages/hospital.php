@@ -108,7 +108,7 @@
                                         $queryDup = "select * from hospitals where hname='$hname'";
                                         if (DB::getInstance()->checkRows($queryDup)):
                                             echo "<h5 align='center' ><font color='red'>Hospital Already Registered.</font></h5>";
-                                            header("refresh:1;url=index.php?page='hospitals'");
+                                            header("refresh:1;url=index.php?page=hospital");
                                             exit();
 //                                            
                                         endif;
@@ -126,7 +126,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>A New Hospital Has Been Created Successfully</font></strong></h5>";
 											
-                                            header("refresh:2;url=index.php?page='hospitals'");
+                                            header("refresh:2;url=index.php?page=hospital");
                                         }
                                     } else {
                                         //output errors

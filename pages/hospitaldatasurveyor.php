@@ -90,7 +90,7 @@
                                         $queryDup = "select * from pgssc_users where User_Name='$username'";
                                         if (DB::getInstance()->checkRows($queryDup)):
                                             echo "<h5 align='center' ><font color='red'>User Already Registered.</font></h5>";
-                                        //   header("refresh:1;url=index.php?page='hospitaldatasurveyor'");
+                                           header("refresh:1;url=index.php?page=hospitaldatasurveyor");
                                             exit();
 //                                            
                                         endif;
@@ -105,7 +105,7 @@
                                         ));
                                         if ($userInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>User Created</font></strong></h5>";
-                                        //    header("refresh:2;url=index.php?page='hospitaldatasurveyor'");
+                                            header("refresh:2;url=index.php?page=hospitaldatasurveyor");
                                         }
                                     } else {
                                         //output errors
