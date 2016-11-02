@@ -41,12 +41,13 @@ body {
                     </li>		
 
                    <li>
-                        <a href="index.php?page=viewhospitals">
+                        <a href="index.php?page=pickhospital">
                             <i class="fa fa-arrow-circle-o-right"></i> 
                             Assign Hospital
                         </a>
                     </li>		
 
+					
                 </ul>	
 
             </li>

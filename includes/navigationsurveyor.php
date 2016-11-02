@@ -40,7 +40,7 @@ body {
                     </li>		
 
                     <li>
-                        <a href="index.php?page=hospitaldatasurveyor">
+                        <a href="index.php?page=hospitaleditsurveyor">
                             <i class="fa fa-arrow-circle-o-right"></i> 
                             Edit Hospital Information
                         </a>

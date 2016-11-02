@@ -158,7 +158,7 @@
 
                                                 <h3>
                                                     <i class="fa fa-money"></i>
-                                                    Assigned Hospitals
+                                                    <b> Data Surveyors Assigned Hospitals </B>
                                               </h3>
 
                                                 <ul class="portlet-tools pull-right">
@@ -173,20 +173,29 @@
 
                                             <div class="portlet-content">
 
-                                                <div class="table-responsive">
+                                               <div class="table-responsive">
                                                     <table class="table">
                                                         <thead>
-                                                           <tr>
-                                                       <th>Hospital Name</th>
-                                                       <th>Hospital Address</th>
-	                                            <th>Data Surveyor's Name</th>
-                                                         <th>Phone Number</th>
-                                                                <th></th>
-                                                            </tr>
+                                                        <tr>
+                                                    <th data-filterable="true" data-sortable="true" data-direction="desc">Hospital Name</th>
+                                                    <th data-direction="asc" data-filterable="true" data-sortable="true">Hospital Address</th>
+                                                    <th data-filterable="true" data-sortable="true">Data Surveyor's Name</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Phone Number</th>
+                                                      </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            
-                                                        </tbody>
+                                                        <tbody> 
+                                                            <?php
+                                                            $assigned_hospital = DB::getInstance()->query("SELECT hname,haddress,pgssc_users.First_Name,pgssc_users.Last_Name,pgssc_users.Phone FROM hospitals INNER JOIN pgssc_users ON hospitals.User_Name= pgssc_users.User_Name");
+                                                            foreach ($assigned_hospital->results() as $assigned_hospital) {
+                                                                ?>
+                                                                <tr class=""> 
+                                                                    <td class="hidden-xs"><?php echo $assigned_hospital->hname; ?></td> 
+																	<td class="hidden-xs"><?php echo $assigned_hospital->haddress; ?></td> 
+																	<td><?php echo $assigned_hospital->First_Name." ".$assigned_hospital->Last_Name;  ?></td>
+                                                                    <td><?php echo $assigned_hospital->Phone; ?></td> 
+                                                                </tr> 
+															<?php } ?>
+                                                        </tbody> 
                                                     </table>
                                                 </div> <!-- /.table-responsive -->
                                                 <br/>
@@ -236,8 +245,7 @@
                                                                 <th class="hidden-xs">First Name
                                                                 </th> 
                                                                 <th>Last Name</th> 
-                                                                <th>Status
-                                                                </th> 
+                                                                <th>Status</th> 
 
                                                             </tr> 
                                                         </thead> 

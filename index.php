@@ -105,6 +105,21 @@ switch ($page) {
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
+
+  case 'hospitaleditsurveyor':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+		
+  case 'pickhospital':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+		
+  case 'hospitalassign':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
 		
     case 'demographics':
         if (file_exists('pages/' . $page . '.php'))
