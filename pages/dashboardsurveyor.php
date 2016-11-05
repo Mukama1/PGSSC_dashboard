@@ -125,7 +125,7 @@
 
                                 <div class="row">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
 
                                         <div class="portlet">
 
@@ -149,25 +149,48 @@
                                             <div class="portlet-content">
 
                                                 <div class="table-responsive">
-                                                    <table class="table">
+                                                    <table 
+                                            class="table table-striped table-bordered table-hover table-highlight table-checkable" 
+                                            data-provide="datatable" 
+                                            data-display-rows="10"
+                                            data-info="true"
+                                            data-search="true"
+                                            data-length-change="true"
+                                            data-paginate="true"
+                                            >
                                                         <thead>
                                                         <tr>
-                                                    <th data-filterable="true" data-sortable="true" data-direction="desc">Hospital Name</th>
+                                                   <th data-filterable="true" data-sortable="true" data-direction="desc">Hospital Name</th>
                                                     <th data-direction="asc" data-filterable="true" data-sortable="true">Hospital Address</th>
-                                                    <th data-filterable="true" data-sortable="true">Data Surveyor's Name</th>
-                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Phone Number</th>
+                                                    <th data-filterable="true" data-sortable="true">Hospital Director</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Director's Qualification</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Director's Phone Number</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Facility Level Evaluated</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Type of Hospital Evaluated</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Name of Staff Completing Assessment</th>
+													<th data-filterable="true" class="hidden-xs hidden-sm">Qualification of Staff Completing Assessment</th>
                                                       </tr>
                                                         </thead>
                                                         <tbody> 
                                                             <?php
-                                                            $assigned_hospital = DB::getInstance()->query("SELECT hname,haddress,pgssc_users.First_Name,pgssc_users.Last_Name,pgssc_users.Phone FROM hospitals INNER JOIN pgssc_users ON hospitals.User_Name= pgssc_users.User_Name");
+															
+															
+                                                            $assigned_hospital = DB::getInstance()->query("SELECT hname,haddress,hdirectorname,hdirectorqualif,hdirectorphone,level,type,staffname,staffqualif FROM hospitals where hospital_id=".$_SESSION['pgsscadmin_h_id']);
+															//$assigned_hospital = DB::getInstance()->query("SELECT hname,haddress,pgssc_users.First_Name,pgssc_users.Last_Name,pgssc_users.Phone FROM hospitals INNER JOIN pgssc_users ON hospitals.User_Name= pgssc_users.User_Name");
                                                             foreach ($assigned_hospital->results() as $assigned_hospital) {
                                                                 ?>
                                                                 <tr class=""> 
-                                                                    <td class="hidden-xs"><?php echo $assigned_hospital->hname; ?></td> 
-																	<td class="hidden-xs"><?php echo $assigned_hospital->haddress; ?></td> 
-																	<td><?php echo $assigned_hospital->First_Name." ".$assigned_hospital->Last_Name;  ?></td>
-                                                                    <td><?php echo $assigned_hospital->Phone; ?></td> 
+																
+																<td><?php echo $assigned_hospital->hname;  ?></td>
+																<td><?php echo $assigned_hospital->haddress;  ?></td>
+																<td><?php echo $assigned_hospital->hdirectorname;  ?></td>
+																<td><?php echo $assigned_hospital->hdirectorqualif;  ?></td>
+																<td><?php echo $assigned_hospital->hdirectorphone;  ?></td>
+																<td><?php echo $assigned_hospital->level;  ?></td>
+																<td><?php echo $assigned_hospital->type;  ?></td>
+																<td><?php echo $assigned_hospital->staffname;  ?></td>
+																<td><?php echo $assigned_hospital->staffqualif;  ?></td>
+
                                                                 </tr> 
 															<?php } ?>
                                                         </tbody> 

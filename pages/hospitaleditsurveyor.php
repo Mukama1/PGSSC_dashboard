@@ -129,9 +129,9 @@
                                             'staffqualif' => $staffqualif,
                                         ), "hospital_id");
                                         if ($hospitalInsert) {
-                                            echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Has Been Updated Successfully</font></strong></h5>";
+                                            echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Information Has Been Updated Successfully</font></strong></h5>";
 											
-                                            header("refresh:1;url=index.php?page=viewhospitalscordinator");
+                                            header("refresh:1;url=index.php?page=navigationsurveyor");
                                         }
                                     } else {
                                         //output errors

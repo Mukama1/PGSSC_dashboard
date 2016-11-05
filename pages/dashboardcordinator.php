@@ -51,12 +51,12 @@
                      <span class="content"><B>Completed Hospitals Survey</B></span>
                                         <span class="value">
                                             <?php
-//                                            $counter = 0;
-//                                            $orders = DB::getInstance()->query("SELECT * FROM jerm_orders WHERE Status='Not Completed' GROUP BY Order_Number");
-//                                            foreach ($orders->results() as $orders) {
-//                                                $counter++;
-//                                            }
-//                                            echo seperators($counter);
+                                            $counter = 0;
+                                            $orders = DB::getInstance()->query("SELECT * FROM assignhospital WHERE Status='Completed' GROUP BY User_id");
+                                            foreach ($orders->results() as $orders) {
+                                                $counter++;
+                                            }
+                                            echo seperators($counter);
                                             ?></span>
                         </div> <!-- /.details -->
 
@@ -74,14 +74,14 @@
                                     </div> <!-- /.visual -->
 
                                     <div class="details">
-                   <span class="content"><B>Incomplete Hospitals Survey</B></span>
+                   <span class="content"><B>Ongoing Surveys</B></span>
                                         <span class="value"> <?php
-                                           // $counter_cart = 0;
-                                            // $orders_cart = DB::getInstance()->query("SELECT * FROM assignhospital GROUP BY User_id");
-                                            // foreach ($orders_cart->results() as $orders_cart) {
-                                                // $counter_cart++;
-                                            // }
-                                            // echo seperators($counter_cart);
+                                            $counter_cart = 0;
+                                             $orders_cart = DB::getInstance()->query("SELECT * FROM assignhospital WHERE Status='Ongoing' GROUP BY User_id");
+                                             foreach ($orders_cart->results() as $orders_cart) {
+                                                 $counter_cart++;
+                                             }
+                                             echo seperators($counter_cart);
                                             ?></span>
                                     </div> <!-- /.details -->
 
@@ -104,7 +104,7 @@
                    <span class="content"><B>Pending Hospitals Survey</B></span>
                                        <span class="value"> <?php
                                             $counter_cart = 0;
-                                             $orders_cart = DB::getInstance()->query("SELECT * FROM assignhospital GROUP BY User_id");
+                                             $orders_cart = DB::getInstance()->query("SELECT * FROM assignhospital WHERE Status='Pending' GROUP BY User_id");
                                              foreach ($orders_cart->results() as $orders_cart) {
                                                  $counter_cart++;
                                              }
@@ -179,20 +179,32 @@
 
                                             <div class="portlet-content">
 
-                                                <div class="table-responsive">
+                                               <div class="table-responsive">
                                                     <table class="table">
                                                         <thead>
-                                                           <tr>
-                                                       <th>Hospital Name</th>
-                                                       <th>Hospital Address</th>
-	                                            <th>Data Surveyor's Name</th>
-                                                         <th>Phone Number</th>
-                                                                <th></th>
-                                                            </tr>
+                                                        <tr>
+                                                    <th data-filterable="true" data-sortable="true" data-direction="desc">Hospital Name</th>
+                                                    <th data-direction="asc" data-filterable="true" data-sortable="true">Hospital Address</th>
+                                                    <th data-filterable="true" data-sortable="true">Data Surveyor's Name</th>
+                                                    <th data-filterable="true" class="hidden-xs hidden-sm">Phone Number</th>
+                                                      </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            
-                                                        </tbody>
+                                                        <tbody> 
+                                                            <?php
+															$edithospital= DB::getInstance()->query("SELECT a.*,pu.*,h.*   from assignhospital a,pgssc_users pu,hospitals h where h.hospital_id=a.hospital_id and pu.User_id=a.User_id");
+														   // $edithospital= DB::getInstance()->query("SELECT hospitals.hname,hospitals.haddress,pgssc_users.First_Name,pgssc_users.Last_Name,pgssc_users.Phone FROM hospitals INNER JOIN assignhospital ON hospitals.hospital_id=assignhospital.hospital_id INNER JOIN pgssc_users ON hospitals.User_id = pgssc_users.User_id");                                                           
+														   //$edithospital= DB::getInstance()->query("SELECT hname,haddress,pgssc_users.First_Name,pgssc_users.Last_Name,pgssc_users.Phone FROM hospitals INNER JOIN assignhospital ON hospitals.hospital_id=".$_SESSION['pgsscadmin_h_id']);                                                           
+														   //$assigned_hospital = DB::getInstance()->query("SELECT hname,haddress,pgssc_users.First_Name,pgssc_users.Last_Name,pgssc_users.Phone FROM hospitals INNER JOIN pgssc_users ON hospitals.User_Name= pgssc_users.User_Name");
+                                                            foreach ($edithospital->results() as $assigned_hospital) {
+                                                                ?>
+                                                                <tr class=""> 
+                                                                    <td class="hidden-xs"><?php echo $assigned_hospital->hname; ?></td> 
+																	<td class="hidden-xs"><?php echo $assigned_hospital->haddress; ?></td> 
+																	<td><?php echo $assigned_hospital->First_Name." ".$assigned_hospital->Last_Name;  ?></td>
+                                                                    <td><?php echo $assigned_hospital->Phone; ?></td> 
+                                                                </tr> 
+															<?php } ?>
+                                                        </tbody> 
                                                     </table>
                                                 </div> <!-- /.table-responsive -->
                                                 <br/>

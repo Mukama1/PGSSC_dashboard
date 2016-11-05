@@ -41,7 +41,7 @@ body {
                     </li>		
 
                    <li>
-                        <a href="index.php?page=viewhospitalscordinator">
+                        <a href="index.php?page=pickhospitalcordinator">
                             <i class="fa fa-arrow-circle-o-right"></i> 
                             Assign Hospital
                         </a>

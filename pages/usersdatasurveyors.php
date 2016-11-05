@@ -106,7 +106,7 @@
                                         if ($userInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Data Surveyor Added</font></strong></h5>";
 											
-											header("refresh:2;url=index.php?page='usersdatasurveyors'");
+											header("refresh:2;url=index.php?page=usersdatasurveyors");
                                         }
                                     } else {
                                         //output errors

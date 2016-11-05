@@ -16,7 +16,7 @@
 <body bgcolor="#B0E0E6">
       <div id="wrapper">
 
-            <?php include 'includes/headerone.php'; ?>
+            <?php include 'includes/headeronecordinator.php'; ?>
 
 
             <div id="sidebar-wrapper" class="collapse sidebar-collapse">
@@ -24,7 +24,7 @@
 
 
                 <?php
-                include 'includes/navigation.php';
+                include 'includes/navigationcordinator.php';
                 ?>
 
             </div> <!-- /#sidebar-wrapper -->
@@ -129,7 +129,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Has Been Assigned Successfully</font></strong></h5>";
 											
-                                            header("refresh:1;url=index.php?page=viewhospitals");
+                                            header("refresh:1;url=index.php?page=viewhospitalscordinator");
                                         }
                                     } else {
                                         //output errors
