@@ -42,25 +42,12 @@
 
                             <div class="col-md-3 col-sm-6">
 
-                                <a href="javascript:;" class="dashboard-stat primary">
-                                    <div class="visual">
-                                        <i class="fa fa-star"></i>
-                                    </div> <!-- /.visual --> 
+                                
+                                   
 
-                                    <div class="details">
-                     <span class="content"><B>Completed Hospitals Survey</B></span>
-                                        <span class="value">
-                                            <?php
-//                                            $counter = 0;
-//                                            $orders = DB::getInstance()->query("SELECT * FROM jerm_orders WHERE Status='Not Completed' GROUP BY Order_Number");
-//                                            foreach ($orders->results() as $orders) {
-//                                                $counter++;
-//                                            }
-//                                            echo seperators($counter);
-                                            ?></span>
-                        </div> <!-- /.details -->
+                                 
 
-                                    <i class="fa fa-play-circle more"></i>
+                                    
 
                                 </a> <!-- /.dashboard-stat -->
 
@@ -68,24 +55,8 @@
 
                             <div class="col-md-3 col-sm-6">
 
-                                <a href="javascript:;" class="dashboard-stat secondary">
-                                    <div class="visual">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </div> <!-- /.visual -->
-
-                                    <div class="details">
-                   <span class="content"><B>Incomplete Hospitals Survey</B></span>
-                                        <span class="value"> <?php
-//                                            $counter_cart = 0;
-//                                            $orders_cart = DB::getInstance()->query("SELECT * FROM jerm_cart GROUP BY User_Id");
-//                                            foreach ($orders_cart->results() as $orders_cart) {
-//                                                $counter_cart++;
-//                                            }
-//                                            echo seperators($counter_cart);
-                                            ?></span>
-                                    </div> <!-- /.details -->
-
-                                    <i class="fa fa-play-circle more"></i>
+                              
+                                    
 
                                 </a> <!-- /.dashboard-stat -->
 
@@ -93,27 +64,7 @@
 
                           
 
-                            <div class="col-md-3 col-sm-6">
 
-                                <a href="javascript:;" class="dashboard-stat">
-                                    <div class="visual">
-                                        <i class="fa fa-money"></i>
-                                    </div> <!-- /.visual -->
-
-                                    <div class="details">
-                   <span class="content"><B>Pending Hospitals <p>Survey</p></B></span>
-                                        <span class="value">
-											</span>
-                                    </div> <!-- /.details -->
-
-                                </a> <!-- /.dashboard-stat -->
-
-
-
-                            </div> <!-- /.col-md-3 -->
-
-
-                        </div> <!-- /.row -->
 
 
 

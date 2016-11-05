@@ -46,6 +46,13 @@ body {
                         </a>
                     </li>		
                 
+				  <li>
+                        <a href="index.php?page=hospitalstatussurveyor">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            Hospital Survey Status
+                        </a>
+                    </li>
+				
                 <li>
                         <a href="index.php?page=dashboardsurveyor">
                             <i class="fa fa-arrow-circle-o-right"></i> 

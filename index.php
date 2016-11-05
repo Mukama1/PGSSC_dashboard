@@ -125,7 +125,13 @@ switch ($page) {
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
+
+  case 'hospitalstatussurveyor':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
 		      
+			  
     case 'logout':
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
