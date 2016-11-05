@@ -186,7 +186,7 @@
                                                     <table class="table">
                                                         <thead>
                                                         <tr>
-                                                    <th data-filterable="true" data-sortable="true" data-direction="desc">Hospital Name</th>
+                                                    <th data-filterable="true" data-sortable="true" data-direction="desc">HospitalName</th>
                                                     <th data-direction="asc" data-filterable="true" data-sortable="true">Hospital Address</th>
                                                     <th data-filterable="true" data-sortable="true">Data Surveyor's Name</th>
                                                     <th data-filterable="true" class="hidden-xs hidden-sm">Phone Number</th>

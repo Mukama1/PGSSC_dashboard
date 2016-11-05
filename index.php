@@ -4,7 +4,7 @@
 session_start();
 require_once 'functions/functions.php';
 include 'core/init.php';
-//error_reporting(0);
+error_reporting(0);
 $crypt = new Encryption();
 //echo date("Y-m-d h:i:s");
 // Current / default page
