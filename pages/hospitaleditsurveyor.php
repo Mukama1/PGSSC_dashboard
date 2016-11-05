@@ -117,7 +117,7 @@
                                             // exit();
                                            
                                         // endif;
-                                        $hospitalInsert = DB::getInstance()->update('hospitals', $h_id,array(
+                                        $hospitalInsert = DB::getInstance()->update('hospitals', $_SESSION['pgsscadmin_h_id'],array(
                                             'hname' => $hname,
                                             'haddress' => $haddress,
                                             'hdirectorname' => $hdirectorname,
@@ -131,7 +131,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Information Has Been Updated Successfully</font></strong></h5>";
 											
-                                            header("refresh:1;url=index.php?page=navigationsurveyor");
+                                            header("refresh:1;url=index.php?page=dashboardsurveyor");
                                         }
                                     } else {
                                         //output errors
