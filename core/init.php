@@ -1,9 +1,9 @@
 <?php
 //'mysql' => array(
 //         'host' => '127.0.0.1',
-//         'username' => 'root',
-//         'password' => 'root@1',
-//         'db' => 'pgssc'
+//         'username' => 'mds',
+//         'password' => 'pgssc2016',
+//         'db' => 'mds'
 //     ),
 //session_start();
 $GLOBALS['config'] = array(
