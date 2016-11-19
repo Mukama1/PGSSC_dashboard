@@ -1,6 +1,6 @@
 <style type="text/css">
 body {
-	background-color: #B0E0E6;
+	background-color: #4682B4;
 }
 </style>
 <div id="search">

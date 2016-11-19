@@ -79,7 +79,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Has been assigned successfully</font></strong></h5>";
 											
-                                            header("refresh:2;url=index.php?page=pickhospital");
+                                            header("refresh:2;url=index.php?page=pickhospitalcordinator");
                                         }
                                     } else {
                                         //output errors

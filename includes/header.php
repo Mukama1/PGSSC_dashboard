@@ -1,5 +1,5 @@
-<div class="hidden-print" bgcolor="#B0E0E6">
-<title bgcolor="#B0E0E6">PGSSC Dashboard</title>
+<div class="hidden-print" bgcolor="#191970">
+<title bgcolor="#191970">PGSSC Dashboard</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="">

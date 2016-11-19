@@ -163,7 +163,7 @@
                                             <div class="portlet-header">
 
                                                 <h3>
-                                                    <i class="fa fa-money"></i>
+                                                    <i class="fa fa-book fa-fw"></i>
                                                     Assigned Hospitals
                                               </h3>
 

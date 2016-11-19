@@ -1,6 +1,6 @@
 <style type="text/css">
 body {
-	background-color: #B0E0E6;
+	background-color: #4682B4;
 }
 </style>
 <div id="search">
@@ -21,7 +21,7 @@ body {
             ?>
             <li class="dropdown">
                 <a href="javascript:;"> 
-                    <i class="fa fa-money"></i>
+                    <i class="fa fa-pencil fa-fw"></i>
                      Hospital
                     <span class="caret"></span>
                 </a>
@@ -76,6 +76,39 @@ body {
                 </ul>
             </li>
             
+			            <li class="dropdown">
+                <a href="javascript:;"> 
+                    <i class="fa fa-book fa-fw"></i>
+                     Reports
+                    <span class="caret"></span>
+                </a>
+				<ul class="sub-nav">
+                    <li>
+                        <a href="index.php?page=viewhospitalscordinator">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View List of Hospitals
+                        </a>
+                    </li>	 
+					
+					<li>
+                        <a href="index.php?page=viewassignedhospitalscordinator">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View List of Assigned Hospitals
+                        </a>
+                    </li>		
+
+                   	<li>
+                        <a href="index.php?page=viewhospitalsstatuscordinator">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Hospitals Survey Status
+                        </a>
+                    </li>		
+
+                </ul>	
+
+            </li>
+			
+			
             <li class="dropdown">
                 <a href="javascript:;">
                     <i class="fa fa-gears"></i>
