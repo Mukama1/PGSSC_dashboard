@@ -130,6 +130,11 @@ switch ($page) {
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
+
+  case 'viewassignedhospitals':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
 		
    case 'pickhospitalcordinator':
         if (file_exists('pages/' . $page . '.php'))

@@ -46,7 +46,12 @@ body {
                             Assign Hospital
                         </a>
                     </li>		
-
+					<li>
+                        <a href="index.php?page=viewassignedhospitals">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Assigned Hospitals
+                        </a>
+                    </li>	
 					
                 </ul>	
 

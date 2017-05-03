@@ -27,12 +27,12 @@
     <body bgcolor="#B0E0E6">
 
         <div id="wrapper">
-            <?php include 'includes/headeronecordinator.php'; ?>
+            <?php include 'includes/headerone.php'; ?>
 
 
             <div id="sidebar-wrapper" class="collapse sidebar-collapse">
                 <?php
-                include 'includes/navigationcordinator.php';
+                include 'includes/navigation.php';
                 ?>
 
             </div> <!-- /#sidebar-wrapper -->
@@ -58,16 +58,8 @@
 
                                     <h3>
                                         <i class="fa fa-list"></i>
-                                        List of Assigned Hospitals
+                                        List of Data Surveyors Assigned Hospitals
                                     </h3>
-									
-									  <ul class="portlet-tools pull-right">
-                                                    <li>
-                                                        <button class="btn btn-sm btn-default">
-                                                            <a href="#"> ALL </a>
-                                                        </button>
-                                                    </li>
-                                                </ul>
 
                                 </div> <!-- /.portlet-header -->
 
@@ -119,8 +111,6 @@
 
 
                                 </div> <!-- /.portlet-content -->
-
-                                        </div> <!-- /.portlet -->
 
                             </div> <!-- /.portlet -->
 

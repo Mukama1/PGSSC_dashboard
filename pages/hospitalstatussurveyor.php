@@ -76,7 +76,7 @@
                                         if ($hospitalInsert) {
                                             echo "<h5 align='center' ><strong><font color='green' size='2px'>Hospital Status Has Been Updated Successfully</font></strong></h5>";
 											
-                                            header("refresh:1;url=index.php?page=dashboard");
+                                            header("refresh:1;url=index.php?page=dashboardsurveyor");
                                         }
                                     } else {
                                         //output errors
