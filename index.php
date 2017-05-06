@@ -144,7 +144,37 @@ switch ($page) {
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
+
+  case 'completedhospitals':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+
+  case 'ongoinghospitals':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+ 
+ case 'pendinghospitals':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+
+  case 'completedhospitalscordinator':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+
+  case 'ongoinghospitalscordinator':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
 		
+  case 'pendinghospitalscordinator':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+				
    case 'pickhospitalcordinator':
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';

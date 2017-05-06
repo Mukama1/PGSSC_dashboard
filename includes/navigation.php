@@ -12,7 +12,7 @@ body {
         <li class="active">				
             <a href="index.php?page=dashboard">
                 <i class="fa fa-dashboard"></i>
-                Administrator Control Panel
+                Administrator's Control Panel
             </a>				
         </li>
        

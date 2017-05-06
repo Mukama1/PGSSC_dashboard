@@ -12,7 +12,7 @@ body {
         <li class="active">				
             <a href="index.php?page=dashboardcordinator">
                 <i class="fa fa-dashboard"></i>
-                Research Cordinator Control Panel
+                Research Cordinator's Control Panel
             </a>				
         </li>
        
