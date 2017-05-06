@@ -12,7 +12,7 @@ body {
         <li class="active">				
             <a href="index.php?page=dashboardcordinator">
                 <i class="fa fa-dashboard"></i>
-                Control Panel
+                Research Cordinator Control Panel
             </a>				
         </li>
        
@@ -31,14 +31,7 @@ body {
                             <i class="fa fa-arrow-circle-o-right"></i> 
                             Add New Hospital
                         </a>
-                    </li>		
-
-                    <li>
-                        <a href="index.php?page=viewhospitalscordinator">
-                            <i class="fa fa-arrow-circle-o-right"></i> 
-                            View List of Hospitals
-                        </a>
-                    </li>		
+                    </li>			
 
                    <li>
                         <a href="index.php?page=pickhospitalcordinator">
@@ -47,12 +40,6 @@ body {
                         </a>
                     </li>		
 
-					<li>
-                        <a href="index.php?page=viewassignedhospitalscordinator">
-                            <i class="fa fa-arrow-circle-o-right"></i> 
-                            View List of Assigned Hospitals
-                        </a>
-                    </li>	
 					
                 </ul>	
 
@@ -73,12 +60,6 @@ body {
                             Add New Data Surveyor
                         </a>
                     </li>
-                    <li>
-                        <a href="index.php?page=list_usersdatasurveyors">
-                            <i class="fa fa-reorder"></i> 
-                            View Data Surveyors
-                        </a>
-                    </li>
 
                 </ul>
             </li>
@@ -96,6 +77,13 @@ body {
                             View List of Hospitals
                         </a>
                     </li>	 
+
+					<li>
+                        <a href="index.php?page=list_usersdatasurveyors">
+                            <i class="fa fa-reorder"></i> 
+                            View Data Surveyors
+                        </a>
+                    </li>
 					
 					<li>
                         <a href="index.php?page=viewassignedhospitalscordinator">
@@ -107,10 +95,31 @@ body {
                    	<li>
                         <a href="index.php?page=viewhospitalsstatuscordinator">
                             <i class="fa fa-arrow-circle-o-right"></i> 
-                            View Hospitals Survey Status
+                            View All Hospitals Survey Status
                         </a>
                     </li>		
-
+                   	<li>
+                        <a href="index.php?page=completedhospitalscordinator">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Completed Hospitals Survey
+                        </a>
+                    </li>
+		            
+					<li>
+                        <a href="index.php?page=ongoinghospitalscordinator">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Ongoing Hospitals Survey
+                        </a>
+                    </li>			
+					
+					<li>
+                        <a href="index.php?page=pendinghospitalscordinator">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Pending Hospitals Survey
+                        </a>
+                    </li>			
+					
+					
                 </ul>	
 
             </li>

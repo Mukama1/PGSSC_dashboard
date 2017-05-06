@@ -140,7 +140,7 @@ switch ($page) {
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
-  case 'viewassigneddatasurveyorperhospital2':
+  case 'viewhospitalsstatus':
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;

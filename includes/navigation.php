@@ -12,7 +12,7 @@ body {
         <li class="active">				
             <a href="index.php?page=dashboard">
                 <i class="fa fa-dashboard"></i>
-                Control Panel
+                Administrator Control Panel
             </a>				
         </li>
        
@@ -33,38 +33,79 @@ body {
                         </a>
                     </li>		
 
-                    <li>
-                        <a href="index.php?page=viewhospitals">
-                            <i class="fa fa-arrow-circle-o-right"></i>
-                            View List of Hospitals
-                        </a>
-                    </li>		
-
                    <li>
                         <a href="index.php?page=pickhospital">
                             <i class="fa fa-arrow-circle-o-right"></i> 
                             Assign Hospital
                         </a>
-                    </li>		
-					<li>
-                        <a href="index.php?page=viewassignedhospitals">
-                            <i class="fa fa-arrow-circle-o-right"></i> 
-                            View Assigned Hospitals
-                        </a>
-                    </li>	
-					<li>
-                        <a href="index.php?page=viewassigneddatasurveyorperhospital">
-                            <i class="fa fa-arrow-circle-o-right"></i> 
-                            View Data Surveyors Assigned To a Specific Hospital
-                        </a>
-                    </li>					
-
+                    </li>						
 				
                 </ul>	
 
             </li>
      
+            
+			            <li class="dropdown">
+                <a href="javascript:;"> 
+                    <i class="fa fa-book fa-fw"></i>
+                     Reports
+                    <span class="caret"></span>
+                </a>
+				<ul class="sub-nav">
+                    <li>
+                        <a href="index.php?page=viewhospitals">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View List of Hospitals
+                        </a>
+                    </li>	 
+					
+					<li>
+                        <a href="index.php?page=viewassignedhospitals">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View List of Assigned Hospitals
+                        </a>
+                    </li>	
+					
+					<li>
+                        <a href="index.php?page=viewassigneddatasurveyorperhospital">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Data Surveyors Assigned To a Specific Hospital
+                        </a>
+                    </li>	
+					
+					
+                   	<li>
+                        <a href="index.php?page=viewhospitalsstatus">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Hospitals Survey Status
+                        </a>
+                    </li>		
+					
+					<li>
+                        <a href="index.php?page=completedhospitals">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Completed Hospitals Survey
+                        </a>
+                    </li>
+		            
+					<li>
+                        <a href="index.php?page=ongoinghospitals">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Ongoing Hospitals Survey
+                        </a>
+                    </li>			
+					
+					<li>
+                        <a href="index.php?page=pendinghospitals">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Pending Hospitals Survey
+                        </a>
+                    </li>			
+                </ul>	
 
+            </li>
+			
+			
             <li class="dropdown">
                 <a href="javascript:;">
                     <i class="fa fa-group"></i>
