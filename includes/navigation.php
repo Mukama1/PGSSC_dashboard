@@ -52,7 +52,14 @@ body {
                             View Assigned Hospitals
                         </a>
                     </li>	
-					
+					<li>
+                        <a href="index.php?page=viewassigneddatasurveyorperhospital">
+                            <i class="fa fa-arrow-circle-o-right"></i> 
+                            View Data Surveyors Assigned To a Specific Hospital
+                        </a>
+                    </li>					
+
+				
                 </ul>	
 
             </li>

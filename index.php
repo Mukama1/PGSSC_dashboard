@@ -135,6 +135,15 @@ switch ($page) {
         if (file_exists('pages/' . $page . '.php'))
             include 'pages/' . $page . '.php';
         break;
+
+  case 'viewassigneddatasurveyorperhospital':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
+  case 'viewassigneddatasurveyorperhospital2':
+        if (file_exists('pages/' . $page . '.php'))
+            include 'pages/' . $page . '.php';
+        break;
 		
    case 'pickhospitalcordinator':
         if (file_exists('pages/' . $page . '.php'))
